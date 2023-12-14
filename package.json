@@ -1,0 +1,29 @@
+{
+  "name": "@9elt/barrtoa",
+  "version": "0.1.0",
+  "description": "convert a bit array to a base 64 string",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "scripts": {
+    "test": "bun test.js",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json && echo '{\"type\":\"module\"}' >dist/esm/package.json",
+    "build": "rm -rf dist && npm run build:cjs && npm run build:esm",
+    "pub": "npm run test && npm run build && npm publish"
+  },
+  "author": "Lorenzo Cicuttin",
+  "license": "MIT",
+  "keywords": [
+    "bit",
+    "bool",
+    "array",
+    "base64"
+  ],
+  "readme": "./README.md",
+  "homepage": "https://github.com/9elt/barrtoa#readme",
+  "repository": "github:9elt/barrtoa"
+}
