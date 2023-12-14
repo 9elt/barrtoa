@@ -3,7 +3,7 @@
 convert a bit array to a base 64 string
 
 ```js
-import { barrtoa, atobarr } from '.';
+import { barrtoa, atobarr } from '@9elt/barrota';
 
 barrtoa([
     true,  true,  false, false, false, false, false, false,
