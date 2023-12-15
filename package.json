@@ -1,7 +1,7 @@
 {
   "name": "@9elt/barrtoa",
-  "version": "0.1.3",
-  "description": "convert a bit array to a base 64 string",
+  "version": "0.2.0",
+  "description": "convert a bit array to a base64 string",
   "main": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "exports": {

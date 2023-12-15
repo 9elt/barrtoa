@@ -1,6 +1,6 @@
 # barrtoa
 
-convert a bit array to a base 64 string
+convert a bit array to a base64 string
 
 ```js
 import { barrtoa, atobarr } from '@9elt/barrtoa';
@@ -15,9 +15,9 @@ barrtoa([
     true,  false, false, true,  false, false, false, true,
     true,  false, false, true,  false, false, true,  true
 ]);
-// '0s32AaYRcV6j'
+// 'AcDCkK81M5GT'
 
-atobarr('0s32AaYRcV6j');
+atobarr('AcDCkK81M5GT');
 // [ true, true, false, false, false, false, ... ]
 
 ```
