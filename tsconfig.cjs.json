@@ -1,13 +1,13 @@
 {
-  "include": [
-    "./index.js"
-  ],
-  "compilerOptions": {
-    "target": "ES2015",
-    "module": "NodeNext",
-    "outDir": "./dist/cjs",
-    "allowJs": true,
-    "removeComments": true,
-    "declaration": true
-  }
+    "include": [
+        "./index.ts"
+    ],
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "NodeNext",
+        "outDir": "./dist/cjs",
+        "allowJs": true,
+        "removeComments": true,
+        "declaration": true
+    }
 }

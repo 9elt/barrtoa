@@ -1,23 +1,20 @@
-# barrtoa
+# Bool Bytes
 
-convert a bit array to a base64 string
+Convert a boolean array to bytes and vice versa.
 
-```js
-import { barrtoa, atobarr } from '@9elt/barrtoa';
+```ts
+import BoolBytes from "@9elt/boolbytes";
 
-barrtoa([
-    true,  true,  false, false, false, false, false, false,
-    true,  true,  false, false, false, false, true,  false,
-    true,  false, false, true,  false, false, false, false,
-    true,  false, true,  false, true,  true,  true,  true,
-    false, false, true,  true,  false, true,  false, true,
-    false, false, true,  true,  false, false, true,  true,
-    true,  false, false, true,  false, false, false, true,
-    true,  false, false, true,  false, false, true,  true
-]);
-// 'AcDCkK81M5GT'
+const booleans = [
+    true, false, false, true, false, false, true, true,
+    true, true, false, false, false, true, false, true,
+    true, false, true, false, false, false, true, true,
+    false, true, false, true, false, true, false, true,
+];
 
-atobarr('AcDCkK81M5GT');
-// [ true, true, false, false, false, false, ... ]
+const bytes = BoolBytes.serialize(booleans);
+// "É£Åª"
 
+BoolBytes.deserialize(bytes);
+// [true, false, false, true, false, false, true, ...
 ```

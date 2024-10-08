@@ -1,17 +1,39 @@
-import { barrtoa, atobarr } from '.';
+import BoolBytes from '.';
 
 let failed = 0;
+[0, 0.5, 1].forEach((prob) => {
+    [0, 1, 31, 32, 62, 63, 1025].forEach((length) => {
+        const boolarr = new Array((length)).fill(0)
+            .map(() => Math.random() > prob);
 
-[0, 0.5, 1].forEach(prob => [0, 1, 31, 32, 62, 63, 1025].forEach(len => {
-    let boolarr = new Array(len).fill(0).map(() => Math.random() > prob);
-    let ser = barrtoa(boolarr);
-    let deser = atobarr(ser);
-    boolarr.forEach((b, i) => b !== deser[i] && ++failed && console.log(
-        'prob.', prob, 'len.', len, 'failed at index ->', i,
-        '\nexpected', b,
-        '\ngot', deser[i],
-    ));
-}));
+        const ser = BoolBytes.serialize(boolarr);
+        const deser = BoolBytes.deserialize(ser);
+
+        if (deser.length !== boolarr.length) {
+            console.log(
+                'prob.', prob, 'len.', (length),
+                'expected', boolarr.length,
+                'got', deser.length,
+            );
+
+            failed++;
+
+            return;
+        }
+
+        for (let i = 0; i < boolarr.length; i++) {
+            if (boolarr[i] !== deser[i]) {
+                console.log(
+                    'prob.', prob, 'len.', (length), 'failed at index ->', i,
+                    '\nexpected', boolarr[i],
+                    '\ngot', deser[i],
+                );
+
+                failed++;
+            }
+        }
+    });
+});
 
 if (failed) {
     console.log('\n' + failed, 'tests failed');
