@@ -1,5 +1,5 @@
 test.js
 example.js
-index.js
+index.ts
 index.d.ts
 !dist/**/*

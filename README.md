@@ -1,6 +1,6 @@
 # Bool Bytes
 
-Convert a boolean array to bytes and vice versa.
+Convert a boolean array to string bytes and vice versa, for the lowest space usage
 
 ```ts
 import BoolBytes from "@9elt/boolbytes";
