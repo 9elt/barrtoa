@@ -35,7 +35,9 @@ export function deserialize(bytes: string): boolean[] {
         for (let y = 0; y < 8; y++) {
             const xy = (x * 8) + y;
 
-            if (result[xy] = ((1 << y) & byte) !== 0) {
+            if (
+                result[xy] = ((1 << y) & byte) !== 0
+            ) {
                 lastTrue = xy;
             }
         }
