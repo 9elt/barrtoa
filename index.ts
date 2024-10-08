@@ -11,8 +11,8 @@ export function serialize(arr: boolean[]): string {
             const xy = x1 + y;
 
             if (arr[xy]
-                // NOTE: The last byte is always true,
-                // and indicates the end of the array
+                // NOTE: We set the very last bit true,
+                // to indicate the end of the array
                 || xy === arr.length) {
                 byte += 1 << y;
             }
