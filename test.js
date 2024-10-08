@@ -1,4 +1,4 @@
-import BoolBytes from '.';
+import { serialize, deserialize } from '.';
 
 let failed = 0;
 [0, 0.5, 1].forEach((prob) => {
@@ -6,8 +6,8 @@ let failed = 0;
         const boolarr = new Array((length)).fill(0)
             .map(() => Math.random() > prob);
 
-        const ser = BoolBytes.serialize(boolarr);
-        const deser = BoolBytes.deserialize(ser);
+        const ser = serialize(boolarr);
+        const deser = deserialize(ser);
 
         if (deser.length !== boolarr.length) {
             console.log(

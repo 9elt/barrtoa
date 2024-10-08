@@ -1,9 +1,9 @@
 # Bool Bytes
 
-Serialize (and deserialize) a boolean array to string bytes, storing 1 boolean per bit
+Serialize (and deserialize) a boolean array into string bytes, storing 1 boolean per bit
 
 ```ts
-import BoolBytes from "@9elt/boolbytes";
+import { deserialize, serialize } from "@9elt/boolbytes";
 
 const booleans = [
     true, false, false, true, false, false, true, true,
@@ -12,9 +12,9 @@ const booleans = [
     false, true, false, true, false, true, false, true,
 ];
 
-const bytes = BoolBytes.serialize(booleans);
+const bytes = serialize(booleans);
 // "É£Åª"
 
-BoolBytes.deserialize(bytes);
+deserialize(bytes);
 // [true, false, false, true, false, false, true, ...
 ```

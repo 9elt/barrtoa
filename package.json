@@ -1,7 +1,7 @@
 {
     "name": "@9elt/boolbytes",
-    "version": "0.1.0",
-    "description": "Convert a boolean array to bytes and vice versa",
+    "version": "0.2.0",
+    "description": "Serialize (and deserialize) a boolean array into string bytes, storing 1 boolean per bit",
     "main": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
     "exports": {
