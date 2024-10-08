@@ -1,6 +1,6 @@
 # Bool Bytes
 
-Convert a boolean array to string bytes and vice versa, for the lowest space usage
+Serialize (and deserialize) a boolean array to string bytes, storing 1 boolean per bit, for the lowest space usage
 
 ```ts
 import BoolBytes from "@9elt/boolbytes";
