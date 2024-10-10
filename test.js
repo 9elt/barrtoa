@@ -8,11 +8,26 @@ let failed = 0;
             .map(() => Math.random() > prob);
 
         const ser = serialize(booleans);
+
+        const expectedLength = Math.ceil((length + 1) / 8);
+
+        if (ser.length !== expectedLength) {
+            console.log(
+                'prob.', prob, 'len.', length, 'bytes length ->',
+                '\nexpected', expectedLength,
+                '\ngot', ser.length,
+            );
+
+            failed++;
+
+            return;
+        }
+
         const deser = deserialize(ser);
 
         if (deser.length !== booleans.length) {
             console.log(
-                'prob.', prob, 'len.', length,
+                'prob.', prob, 'len.', length, 'deserialized length ->',
                 '\nexpected', booleans.length,
                 '\ngot', deser.length,
             );
